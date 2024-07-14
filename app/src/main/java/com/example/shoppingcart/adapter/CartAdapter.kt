@@ -12,13 +12,12 @@ class CartAdapter(private var cartList: List<Item> = emptyList()): RecyclerView.
         fun bind(item: Item) {
             binding.apply {
                 itemName.text = item.itemName
-                val itemCount = item.itemCount
-                val itemPrice = item.sellingPrice
-                val taxPercentage = item.taxPercentage
-                val totalPrice = itemCount * itemPrice * (1 + taxPercentage / 100)
-                val formattedPrice = String.format("%.1f", totalPrice)
-
-                itemPriceIncTax.text = formattedPrice
+                val itemCount = item.itemCount.toDouble()
+                val itemPrice = item.sellingPrice.toDouble()
+//                val taxPercentage = item.taxPercentage
+                val totalPrice = itemPrice * itemCount
+                val formattedString = String.format("%.2f * %.2f = $%.2f", itemPrice, itemCount, totalPrice)
+                itemPriceIncTax.text = formattedString
             }
         }
     }

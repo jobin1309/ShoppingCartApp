@@ -61,8 +61,8 @@ class CartFragment : Fragment() {
 //    }
 
     private fun updateTotalPrice(items: List<Item>) {
-        itemTotal = items.sumOf { it.sellingPrice * it.itemCount * (1 + it.taxPercentage / 100) }
-        binding.totalPrice.text = String.format("%.1f", itemTotal)
+        itemTotal = items.sumOf { it.sellingPrice * it.itemCount }
+        binding.totalPrice.text = String.format("$%.1f", itemTotal)
     }
 
 }

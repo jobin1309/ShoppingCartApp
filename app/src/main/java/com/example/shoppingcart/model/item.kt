@@ -16,6 +16,6 @@ data class Item(
     val sellingPrice: Double,
     @SerializedName("taxPercentage")
     val taxPercentage: Double,
-    val itemCount: Int,
-    val itemTotal: Double
+    val itemCount: Int = 0,
+    val itemTotal: Double = 0.0
 )

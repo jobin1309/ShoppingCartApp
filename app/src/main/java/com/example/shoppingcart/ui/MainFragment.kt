@@ -1,4 +1,4 @@
-package com.example.shoppingcartapp
+package com.example.shoppingcart.ui
 
 import android.os.Bundle
 import android.util.Log
